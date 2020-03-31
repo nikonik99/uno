@@ -5,7 +5,7 @@
 * pagina principale, con il tavolo da gioco, le proprie carte e l’ultima carta lasciata sul tavolo e il mazzo. Possibilità di scegliere la carta da buttare con controllo della carta che possa essere giocata, pulsante termina turno dopo che si ha finito di lasciare le carte possibili che si hanno in mano. Possibilità di pescare cliccando sul mazzo se non si può fare niente. Tasto “Uno” che deve essere cliccato quando manca una carta altrimenti vengono aggiunte due carte a quelle del giocatore.
 * pagina finale, proclamazione del vincitore e possibilità di iniziare un altra partita. 
 
-## Backend
+## Backend:
 * Classi per la gestione del gioco, Classe carta astratta,  da cui derivano le classi CartaNormale che hanno un colore e un numero e CartaSpeciale che può essere un cambia colore, +4, +2, stop, cambio giro. 
 * Classe Mazzo, array di carte.
 * Classe Giocatore che ha un  array di carte, un nome 
