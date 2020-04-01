@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Accedi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" width="50%" alt="" /></span>
+							<h1 id="messageTitle">Ciao!</h1>
+							<p id="messageBox">Scegli un nome utente per accedere al gioco :)</p>
+						</header>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field">
+									<input type="text" name="name" id="name" placeholder="Nome utente" />
+								</div>
+                            </div>
+							<ul class="actions special">
+								<li><a id="play" class="button">GIOCA</a></li>
+							</ul>
+						</form>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; 2020</li><li></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+            <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script async>
+                $(document).ready(function(){
+                    //da cambiare quando va hostato
+                    var serverAddr = "127.0.0.1:8080";
+                    
+                    $("#play").click(function(){
+                        var username = $("#name").val();
+                        $.post(serverAddr + "/start", {uname: username}, function(result){
+                            if(result == "false"){
+                                var cT = $("#messageTitle").html();
+                                var cM = $("messageBox").html();
+                                $("#messageTitle").html("ERRORE!");
+                                $("#messageBox").html("Il nome utente scelto sembra non essere disponibile, provane un altro...");
+                                $("#messageTitle").css("color", "red");
+                                var int = setTimeout(function(){
+                                    $("#messageTitle").html(cT);
+                                    $("#messageBox").html(cM);
+                                    $("#messageTitle").css("color", "#000");
+                                }, 3000);
+                            }else{
+                                window.location.href="../";
+                            }
+                        });
+                    });
+                });
+            </script>
+	</body>
+</html>
