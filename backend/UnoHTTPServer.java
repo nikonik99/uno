@@ -14,6 +14,7 @@ import java.net.InetAddress;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import com.sun.net.httpserver.Headers;
 
 public class UnoHTTPServer{
 	private HttpServer server;
@@ -52,6 +53,10 @@ public class UnoHTTPServer{
 		@param rPV stringa contenente i parametri della richiesta
 		*/
 		public void handleResponse(HttpExchange e, String rPV){
+			Headers headers = e.getResponseHeaders();
+			headers.add("Access-Control-Allow-Headers","x-prototype-version,x-requested-with");
+			headers.add("Access-Control-Allow-Methods","GET,POST");
+			headers.add("Access-Control-Allow-Origin","*");
 			System.out.println(rPV);
 			OutputStream os;
 			try{
@@ -79,12 +84,17 @@ public class UnoHTTPServer{
 			String playerName=null;
 			if(e.getRequestMethod().equalsIgnoreCase("POST")){
 				String request =super.handlePostRequest(e);
-				playerName=request.split("=")[1];
+				String[] rSplit=request.split("=");
+				if(rSplit.length==2)
+					playerName=rSplit[1];
 			} //if
-			if(playerName==null || players.contains(playerName))
-				super.handleResponse(e,"{esito: false}");
+			System.out.println("Giocatore:"+playerName);
+			if(players.size()+1>10)
+				super.handleResponse(e,"Server pieno");
+			if(playerName==null || playerName.isEmpty() || players.contains(playerName))
+				super.handleResponse(e,"false");
 			else if(playerName!=null && !players.contains(playerName)){
-					super.handleResponse(e,"{esito: true}");
+					super.handleResponse(e,"true");
 					System.out.println(playerName);
 					players.add(playerName);
 			} //else
@@ -123,11 +133,11 @@ public class UnoHTTPServer{
 		server.start();
 		players=new Vector<String>();
 		System.out.println("Server avviato sull'indirizzo"+add+" pronto ad una nuova partita...");
+		server.stop(300); //il server rimane in attesa dei giocatori per 3 minuti
 	} //UnoHTTPServer
 
 	public static void main(String[] args){
 		UnoHTTPServer s=new UnoHTTPServer(new InetSocketAddress(8000));
-
 	}
 
 } //UnoHTTPServer
