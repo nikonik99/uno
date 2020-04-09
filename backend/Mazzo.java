@@ -30,9 +30,9 @@ public class Mazzo{
 		}//for-colori
 		//costruisco le carte speciali
 		for(int i=0;i<3;i++)
-			carte.add(new CartaSpeciale(0));//jolly
+			carte.add(new CartaSpeciale(0));//+4
 		for(int i=0;i<4;i++)
-			carte.add(new CartaSpeciale(1));//+4
+			carte.add(new CartaSpeciale(1));//jolly
 	}//Mazzo - Cotruttore
 
 	//Metodo che mischia le carte
