@@ -5,7 +5,7 @@
 
 */
 
-public class CartaSpecialeColore{
+public class CartaSpecialeColore extends Carta{
 
 	private char colore; //g giallo, v verde, b blu, r rosso
 	private char effetto; //2 +2, s stop, g cambio giro
@@ -14,7 +14,7 @@ public class CartaSpecialeColore{
 	* @param e effetto della carta
 	* @param c colore della carta
 	*/
-	private CartaSpecialeColore(char e, char c){
+	public CartaSpecialeColore(char e, char c){
 		effetto = e;
 		colore = c;
 	} //CartaSpeciale
@@ -22,7 +22,7 @@ public class CartaSpecialeColore{
 	/** costruttore di copia
 	* @param cS oggetto di classe CartaSpeciale
 	*/
-	private CartaSpecialeColore(CartaSpecialeColore cS){
+	public CartaSpecialeColore(CartaSpecialeColore cS){
 		effetto = cS.effetto;
 		colore = cS.colore;
 	} //CartaSpeciale

@@ -5,7 +5,7 @@
 
 */
 
-public class CartaNormale{
+public class CartaNormale extends Carta{
 
 	private char colore; //g giallo, v verde, b blu, r rosso
 	private int valore;

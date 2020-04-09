@@ -7,13 +7,14 @@
 
 public class Mazzo{
 
-	private CartaNormale[] cN;
-	private CartaSpeciale[] cS;
+	private Vector<Carta> carte;
 
+	/** costruttore senza parametri
+	* costruisce un mazzo di carte regolamentare
+	*/
 	public Mazzo(){
-		//costruttore che genera un array mescolato di carte secondo
-		//le regole del gioco
-	}
+		for(int i=0;i<)
+	} //Mazzo
 
 	public Mazzo(Mazzo m){
 		cN = m.getNormali();
