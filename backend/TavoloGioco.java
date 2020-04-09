@@ -5,9 +5,11 @@
 
 */
 
+import java.util.Vector;
+
 public class TavoloGioco{
     
-    private <Vector>Giocatore giocatori; //vettore contente i giocatori della partita
+    private Vector<Giocatore> giocatori; //vettore contente i giocatori della partita
     private Mazzo mazzo;                 //mazzo centrotavolo
     
     /** csotruttore completo
@@ -26,8 +28,8 @@ public class TavoloGioco{
     /** costruttore di copia
         @return vettore contente i giocatori
     */
-    public <Vector>Gicatore getGiocatori(){
-        return giocatore;
+    public Vector<Giocatore> getGiocatori(){
+        return giocatori;
     }//getGiocatori
     
     

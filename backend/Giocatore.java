@@ -32,7 +32,7 @@ public class Giocatore{
     /** getNome
         @return n nome del giocatore
     */
-    public void getNome(){
+    public String getNome(){
         return n;
     }
     
@@ -46,14 +46,14 @@ public class Giocatore{
     /** setNome
         @param nome nickname del giocatore da impostare
     */
-    public setNome(String nome){
+    public void setNome(String nome){
         n = nome;
     }
     
     /** setCarte
         @param carta vettore di carte da asseggnare al giocatore
     */
-    public setCarte(Vector<Carta> carte){
+    public void setCarte(Vector<Carta> carte){
         c = carte;
     }
 
