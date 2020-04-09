@@ -5,6 +5,7 @@
 
 */
 import java.util.Vector;
+import java.util.Collections;
 public class Mazzo{
 
 	private Vector<Carta> carte;
@@ -33,4 +34,9 @@ public class Mazzo{
 		for(int i=0;i<4;i++)
 			carte.add(new CartaSpeciale(1));//+4
 	}//Mazzo - Cotruttore
+
+	//Metodo che mischia le carte
+	public void shuffle(){
+		Collections.shuffle(carte);
+	}//shuffle
 }//Mazzo - Classe
