@@ -7,14 +7,14 @@
 
 public class CartaNormale extends Carta{
 
-	private char colore; //g giallo, v verde, b blu, r rosso
+	private int colore; //0 giallo, 1 verde, 2 blu, 3 rosso
 	private int valore;
 
 	/** costruttore completo
 	* @param v valore della carta
-	* @param c carattere col colore della carta
+	* @param c intero che rappresenta il colore della carta
 	*/
-	public CartaNormale(int v, char c){
+	public CartaNormale(int v, int c){
 		valore = v;
 		colore = c;
 	} //CartaNormale
@@ -30,14 +30,14 @@ public class CartaNormale extends Carta{
 	/** setC
 	 * @param c colore da assegnare alla carta
 	 */
-	public void setC(char c){
+	public void setC(int c){
 		colore = c;
 	} //setC
 
 	/** getC
 	 * @return colore della carta
 	 */
-	public char getC(){
+	public int getC(){
 		return colore;
 	} //setC
 

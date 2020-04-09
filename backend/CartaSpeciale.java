@@ -7,12 +7,12 @@
 
 public class CartaSpeciale extends Carta{
 
-	private char effetto; //4 +4, c cambio colore
+	private int effetto; //0 +4, 1 cambio colore
 
 	/** costruttore completo
 	* @param e effetto della carta
 	*/
-	public CartaSpeciale(char e){
+	public CartaSpeciale(int e){
 		effetto = e;
 	} //CartaSpeciale
 
@@ -26,14 +26,14 @@ public class CartaSpeciale extends Carta{
 	/** setE
 	 * @param e effetto della carta
 	 */
-	public void setE(char e){
+	public void setE(int e){
 		effetto = e;
 	} //setE
 
 	/** getE
 	 * @return effetto della carta
 	 */
-	public char getE(){
+	public int getE(){
 		return effetto;
 	} //getE
 

@@ -7,14 +7,14 @@
 
 public class CartaSpecialeColore extends Carta{
 
-	private char colore; //g giallo, v verde, b blu, r rosso
-	private char effetto; //2 +2, s stop, g cambio giro
+	private int colore; //0 giallo, 1 verde, 2 blu, 3 rosso
+	private int effetto; //0 +2, 1 stop, 2 cambio giro
 
 	/** costruttore completo
 	* @param e effetto della carta
 	* @param c colore della carta
 	*/
-	public CartaSpecialeColore(char e, char c){
+	public CartaSpecialeColore(int e, int c){
 		effetto = e;
 		colore = c;
 	} //CartaSpeciale
@@ -30,28 +30,28 @@ public class CartaSpecialeColore extends Carta{
 	/** setC
 	 * @param c colore da assegnare alla carta
 	 */
-	public void setC(char c){
+	public void setC(int c){
 		colore = c;
 	} //setC
 
 	/** getC
 	 * @return colore della carta
 	 */
-	public char getC(){
+	public int getC(){
 		return colore;
 	} //setC
 
 	/** setE
 	 * @param e effetto della carta
 	 */
-	public void setE(char e){
+	public void setE(int e){
 		effetto = e;
 	} //setE
 
 	/** getE
 	 * @return effetto della carta
 	 */
-	public char getE(){
+	public int getE(){
 		return effetto;
 	} //getE
 
