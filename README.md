@@ -9,6 +9,6 @@
 * Classi per la gestione del gioco, Classe carta astratta,  da cui derivano le classi CartaNormale che hanno un colore e un numero e CartaSpeciale che può essere un cambia colore, +4, +2, stop, cambio giro. 
 * Classe Mazzo, array di carte.
 * Classe Giocatore che ha un  array di carte, un nome 
-* Classe TavoloGioco, possiede un array di giocatori, e un mazzo con le carte rimanenti, e l’ultima carta buttata. Il tavolo da gioco all’inizio deve essere inizializzato e quindi va equilibrato il numero di carte per giocatore. Gestisce il turno dei giocatori e controlla le giocate fatte dal giocatore 
+* Classe TavoloGioco, possiede un VETTORE di giocatori, e un mazzo con le carte rimanenti, e l’ultima carta buttata. Il tavolo da gioco all’inizio deve essere inizializzato e quindi va equilibrato il numero di carte per giocatore. Gestisce il turno dei giocatori e controlla le giocate fatte dal giocatore 
 * Creazione della classe custom di HTTPServer, per la gestione delle richieste, con handler per gestire le richieste POST. Gestisce i turni e invia le varie giocate al tavolo da gioco. 
 * Backdoor di accesso per cambiare i valori delle carte di chi ha fatto l’accesso con alcune del mazzo.

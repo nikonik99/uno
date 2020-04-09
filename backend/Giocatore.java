@@ -18,14 +18,15 @@ public class Giocatore{
     */
     public Giocatore(String nome, Vector<Carta> carte){
        n = nome;
-       
+       c = carte;
     }
     
     /** costruttore di copia
         @param g giocatore da cui copiare
     */
     public Giocatore(Giocatore g){
-        
+        n = g.getNome();
+        c = g.getCarte();
     }
     
     /** getNome
@@ -38,7 +39,7 @@ public class Giocatore{
     /** getCarte
         @return c carte del giocatore
     */
-    public void getCarte(){
+    public Vector<Carta> getCarte(){
         return c;
     }
     
