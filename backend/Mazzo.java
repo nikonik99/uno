@@ -39,4 +39,8 @@ public class Mazzo{
 	public void shuffle(){
 		Collections.shuffle(carte);
 	}//shuffle
+
+	public Carta pesca(){
+		return carte.remove(carte.size()-1);
+	}//pesca
 }//Mazzo - Classe
