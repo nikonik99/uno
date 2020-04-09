@@ -13,7 +13,17 @@ public class Mazzo{
 	* costruisce un mazzo di carte regolamentare
 	*/
 	public Mazzo(){
-		for(int i=0;i<)
+		//for per le carte blu
+		for(int i=0;i<3;i++){//for esterno, scandisce i colori
+			for(int j=0;j<9;j++){
+				if(j==0)
+					carte.add(new CartaNormale(j,i));//inizilizzo solo uno 0
+				carte.add(new CartaNormale(j,i));//così inizializzo 2 carte dello stesso numero
+				carte.add(new CartaNormale(j,i));
+			}//for-numeri
+			carte.add(new CartaSpeciale())
+		}//for-colori
+
 	} //Mazzo
 
 	public Mazzo(Mazzo m){
