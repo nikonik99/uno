@@ -22,7 +22,7 @@ public class Mazzo{
 				carte.add(new CartaNormale(j,i));//così inizializzo 2 carte dello stesso numero
 				carte.add(new CartaNormale(j,i));
 			}//for-numeri
-			for(int j=0;j<9;j++){
+			for(int j=0;j<8;j++){
 				carte.add(new CartaSpecialeColore(0,i));//+2
 				carte.add(new CartaSpecialeColore(1,i));//stop
 				carte.add(new CartaSpecialeColore(2,i));//cambio giro
