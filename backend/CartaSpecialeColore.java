@@ -5,23 +5,41 @@
 
 */
 
-public class CartaSpeciale{
+public class CartaSpecialeColore{
 
-	private char effetto; //4 +4, c cambio colore
+	private char colore; //g giallo, v verde, b blu, r rosso
+	private char effetto; //2 +2, s stop, g cambio giro
 
 	/** costruttore completo
 	* @param e effetto della carta
+	* @param c colore della carta
 	*/
-	private CartaSpeciale(char e){
+	private CartaSpecialeColore(char e, char c){
 		effetto = e;
+		colore = c;
 	} //CartaSpeciale
 
 	/** costruttore di copia
 	* @param cS oggetto di classe CartaSpeciale
 	*/
-	private CartaSpeciale(CartaSpeciale cS){
+	private CartaSpecialeColore(CartaSpecialeColore cS){
 		effetto = cS.effetto;
+		colore = cS.colore;
 	} //CartaSpeciale
+
+	/** setC
+	 * @param c colore da assegnare alla carta
+	 */
+	public void setC(char c){
+		colore = c;
+	} //setC
+
+	/** getC
+	 * @return colore della carta
+	 */
+	public char getC(){
+		return colore;
+	} //setC
 
 	/** setE
 	 * @param e effetto della carta
