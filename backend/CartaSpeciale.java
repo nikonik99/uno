@@ -5,21 +5,21 @@
 
 */
 
-public class CartaSpeciale{
+public class CartaSpeciale extends Carta{
 
 	private char effetto; //4 +4, c cambio colore
 
 	/** costruttore completo
 	* @param e effetto della carta
 	*/
-	private CartaSpeciale(char e){
+	public CartaSpeciale(char e){
 		effetto = e;
 	} //CartaSpeciale
 
 	/** costruttore di copia
 	* @param cS oggetto di classe CartaSpeciale
 	*/
-	private CartaSpeciale(CartaSpeciale cS){
+	public CartaSpeciale(CartaSpeciale cS){
 		effetto = cS.effetto;
 	} //CartaSpeciale
 
