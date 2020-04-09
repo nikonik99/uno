@@ -4,7 +4,7 @@
 
 
 */
-
+import java.util.Vector;
 public class Mazzo{
 
 	private Vector<Carta> carte;
@@ -21,18 +21,16 @@ public class Mazzo{
 				carte.add(new CartaNormale(j,i));//così inizializzo 2 carte dello stesso numero
 				carte.add(new CartaNormale(j,i));
 			}//for-numeri
-			carte.add(new CartaSpeciale())
+			for(int j=0;j<9;j++){
+				carte.add(new CartaSpecialeColore(0,i));//+2
+				carte.add(new CartaSpecialeColore(1,i));//stop
+				carte.add(new CartaSpecialeColore(2,i));//cambio giro
+			}//for-speciali
 		}//for-colori
-
-	} //Mazzo
-
-	public Mazzo(Mazzo m){
-		cN = m.getNormali();
-		cS = m.getSpeciali();
-	}
-
-	public void addCartaNormale(CartaNormale c){
-		//aggiunge carta e mescola il mazzo
-	}
-
-}
+		//costruisco le carte speciali
+		for(int i=0;i<3;i++)
+			carte.add(new CartaSpeciale(0));//jolly
+		for(int i=0;i<4;i++)
+			carte.add(new CartaSpeciale(1));//+4
+	}//Mazzo - Cotruttore
+}//Mazzo - Classe
